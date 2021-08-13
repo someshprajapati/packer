@@ -3,7 +3,7 @@
         {
             "type": "amazon-ebs",
             "region": "ap-south-1",
-            "ami_name": "somesh-ubuntu-nginx",
+            "ami_name": "{{user `description`}}-{{user `version`}}",
             "source_ami": "ami-0c1a7f89451184c8b",
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu"
@@ -19,6 +19,12 @@
                 "sudo apt-get install -y nginx"
             ]
         }
-    ]
+    ],
+    "post-processors": [
+        {
+            "type": "manifest",
+            "output": "{{user `description`}}.json"
+        }
+    ] 
 }
     

@@ -12,13 +12,16 @@
     "provisioners": [
         {
             "type": "shell",
-            "inline": [
-                "sleep 30",
-                "echo Installing Nginx",
-                "sudo apt-get update",
-                "sudo apt-get install -y nginx"
-            ]
+            "script": "setup.sh"
+        },
+        {
+            "type": "file",
+            "source": "index.html",
+            "destination": "/tmp/"
+        },
+        {
+            "type": "shell",
+            "inline": ["sudo cp /tmp/index.html /var/www/html/"]
         }
     ]
 }
-    

@@ -1,9 +1,15 @@
 {
+    "variables": {
+        "access_key": "{{env `ACCESS_KEY`}}",
+        "secret_key": "{{env `SECRET_KEY`}}"
+    },
     "builders": [
         {
             "type": "amazon-ebs",
             "region": "ap-south-1",
-            "ami_name": "somesh-ubuntu-nginx",
+            "access_key": "{{user `ACCESS_KEY`}}",
+            "secret_key": "{{user `SECRET_KEY`}}", 
+            "ami_name": "somesh-ubuntu-env-keys",
             "source_ami": "ami-0c1a7f89451184c8b",
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu"
@@ -19,6 +25,10 @@
                 "sudo apt-get install -y nginx"
             ]
         }
+    ],
+    "sensitive-variables": [
+        "access_key",
+        "secret_key"
     ]
 }
     
