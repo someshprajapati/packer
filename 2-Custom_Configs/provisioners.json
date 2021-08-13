@@ -1,0 +1,25 @@
+{
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "ap-south-1",
+            "ami_name": "somesh-ami-test",
+            "source_ami": "ami-0c1a7f89451184c8b",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu"
+        }
+    ]
+    "provisioner": "shell" {
+    environment_vars = [
+      "FOO=hello world",
+    ]
+    inline = [
+      "echo Installing Redis",
+      "sleep 30",
+      "sudo apt-get update",
+      "sudo apt-get install -y redis-server",
+      "echo \"FOO is $FOO\" > example.txt",
+    ]
+  }
+}
+  

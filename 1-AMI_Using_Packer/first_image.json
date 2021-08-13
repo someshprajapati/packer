@@ -1,0 +1,12 @@
+{
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "ap-south-1",
+            "ami_name": "somesh-ami-test",
+            "source_ami": "ami-0c1a7f89451184c8b",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu"
+        }
+    ]
+}
