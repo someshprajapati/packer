@@ -1,4 +1,4 @@
-# Automation with Hashicorp Packer 
+# AMI Automation on AWS with Hashicorp Packer 
 
 **_NOTE:_** Please update your `access_key` and `secret_key` in each json files before running the below commands.
 
@@ -10,7 +10,7 @@ S😎MESH~[packer (main)]-$ cd 1-AMI_Using_Packer
 S😎MESH~[1-AMI_Using_Packer (main)]-$ packer build first_image.json
 ```
 
-## 2. Building NGINX AMI using Provisioners
+## 2. Building Nginx AMI using Provisioners
 
 ```
 S😎MESH~[packer (main)]-$ cd 2-Custom_Configs
@@ -18,7 +18,7 @@ S😎MESH~[packer (main)]-$ cd 2-Custom_Configs
 S😎MESH~[2-Custom_Configs (main)]-$ packer build provisioners.json
 ```
 
-## 3. Building NGINX AMI using Script Provisioners
+## 3. Building Nginx AMI using Script Provisioners
 
 ```
 S😎MESH~[packer (main)]-$ cd 3-Script_Provisioners
@@ -26,7 +26,7 @@ S😎MESH~[packer (main)]-$ cd 3-Script_Provisioners
 S😎MESH~[3-Script_Provisioners (main)]-$ packer build script_provisioners.json
 ```
 
-## 4. Building NGINX AMI using File Provisioners
+## 4. Building Nginx AMI using File Provisioners
 
 ```
 S😎MESH~[packer (main)]-$ cd 4-File_Provisioners
@@ -41,7 +41,7 @@ S😎MESH~[packer (main)]-$
 
 ```
 
-## 6. Building NGINX AMI using Post Processors
+## 6. Building Nginx AMI using Post Processors
 
 ```
 S😎MESH~[packer (main)]-$ cd 6-Post_Processors
@@ -80,7 +80,7 @@ S😎MESH~[6-Post_Processors (main)]-$ cat output.json
 ───────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────
 ```
 
-## 7. Building NGINX AMI using User defined Variables
+## 7. Building Nginx AMI using User defined Variables
 
 ```
 S😎MESH~[packer (main)]-$ cd 7-User_Variables
@@ -91,7 +91,7 @@ S😎MESH~[7-User_Variables (main)]-$ packer build -var-file=variables.json user
 
 ```
 
-## 8. Building NGINX AMI using environment Variables
+## 8. Building Nginx AMI using environment Variables
 
 ```
 S😎MESH~[packer (main)]-$ cd 8-Environment_Variables
